@@ -8,14 +8,19 @@ def ucitaj_tekst(filepath):
     except FileNotFoundError:
         print(f"Datoteka '{filepath}' nije pronađena.")
         return None # Vratiti ćemo "ništa" ako datoteka ne postoji
-
 # funkcija za pročišćavanje tesksta
 def ocisti_tekst(tekst):
     # Kod za pročišćavanje teksta ide ovdje
     tekst = tekst.lower()
-    return tekst
+    interpunkcija = ['.', ',', '!', '?', ':', ';', '"', "'", '(', ')']
+    for znak in interpunkcija:
+        tekst = tekst.replace(znak, '')
+
+    lista_rijeci = tekst.split()
+        
 
 
+    return lista_rijeci
 
 if __name__ == "__main__":
     filepath = "tekst.txt"
@@ -26,11 +31,12 @@ if __name__ == "__main__":
         print(ucitani_tekst)
     else:
         print("Greška pri učitavanju datoteke.")
+    
     ucitani_tekst = ocisti_tekst(ucitani_tekst)
+    
     if ucitani_tekst:
         print("Očišćeni tekst je:")
         print(ucitani_tekst)
     else:
         print("Greška pri očišćavanju teksta.")
-
-        
+  
