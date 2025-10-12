@@ -18,6 +18,21 @@ def ocisti_tekst(tekst):
     lista_rijeci = tekst.split()
     return lista_rijeci
 
+
+# funkcija za uklanjanje čestih riječi
+def stop_words(lista_rijeci, ceste_rijeci):
+    # Kod za uklanjanje čestih riječi ide ovdje
+    lista_rijeci = ceste_rijeci.lower()
+    stop_words = ['ako', 'i', 'u', 'na', 'je', 'ali', 'a', 'o', 'li', 'te', 'se', 'za', 'su', 'to', 'sa', 'od', 'do', 'što']
+    for rijec in stop_words:
+        if rijec in lista_rijeci:
+            stop_words.remove(rijec)
+    return lista_rijeci
+
+
+
+ 
+
 def broji_rijeci(lista_rijeci):
     #riječnik u koji ćemo spremiti svaku riječ i koliko se puta ta riječ ponovila u tekstu
     brojac_rijeci={}
@@ -26,19 +41,9 @@ def broji_rijeci(lista_rijeci):
             brojac_rijeci[rijec] += 1
         else:
             brojac_rijeci[rijec] = 1
-    return brojac_rijeci
 
-if __name__ == "__main__":
-    filepath = "tekst.txt"
-    print(f"Učitavam tekst iz datoteke: {filepath}")
-    ucitani_tekst = ucitaj_tekst(filepath)
-    if ucitani_tekst:
-        print("Učitani tekst je:")
-        print(ucitani_tekst)
-    else:
-        print("Greška pri učitavanju datoteke.")
-    
-    ucitani_tekst = ocisti_tekst(ucitani_tekst)
+
+ 
     
     if ucitani_tekst:
         print("Očišćeni tekst je:")
@@ -50,5 +55,3 @@ if __name__ == "__main__":
     else:
         print("Greška pri očišćavanju teksta.")
   
-  
-
