@@ -1,0 +1,44 @@
+"""
+broj = 10 # int (integer)
+ime = "Pero" # string
+znak = 'a' # char (character)
+cijena = 10.5 # float (decimalni broj)
+istina = True # bool (boolean)
+
+if broj > 5:
+    print ("Broj je veći od 5")
+elif broj == 5:
+    print ("Broj je jednak 5")
+else:
+    print ("broj nije veći od 5")
+
+if istina:
+    print("True")
+else:
+    print("False")
+"""
+
+# Zadatak 2
+"""
+print("unesi temperaturu:")
+temperatura = input()
+temoeratura = int(temperatura)
+
+temperaturea = int(input("unesi temperaturu: "))
+if temperaturea <= 0:
+    print("Ledenica")
+elif temperaturea > 0 and temperaturea <= 15:
+    print("Hladno")
+ 
+elif temperaturea > 15 and temperaturea <= 25:
+    print("Ugodno")
+else:
+    print("Vruće")
+"""
+
+# petlje
+for i in range(10):
+    print(i)
+
+for slovo in "Bok":
+    print(slovo)
