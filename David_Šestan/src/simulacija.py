@@ -24,7 +24,7 @@ sns.set_theme(style="whitegrid")
 
 plt.figure(figsize=(10, 6))
 sns.scatterplot(data=df_cisto, x="Temp_Tla_C", y="H2O_Postotak", hue="Metan_Senzor")
-plt.savefig("graf1_temperatura_voda.png", dpi=200)
+plt.savefig("graf1_temperatura_voda (1).png", dpi=200)
 plt.close()
 
 plt.figure(figsize=(10, 6))
